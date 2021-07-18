@@ -1,12 +1,13 @@
 import React, { memo } from "react"
 import Navigation from "../navigation/navigation";
+import './header.css'
 
-function Header() {
+function Header() { 
     return (
-        <div>
+        <header >
             <h2>Header</h2>
             <Navigation />
-        </div>
+        </header>
     )
 }
 

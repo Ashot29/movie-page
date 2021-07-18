@@ -5,7 +5,7 @@ import Home from "./pages/home/home"
 import Header from "./components/header/header"
 import About from "./pages/about/about"
 import { BrowserRouter, Route } from "react-router-dom";
-import {API_KEY,API_URL,IMG_URL} from "./config/url"
+import { API_KEY, API_URL, IMG_URL } from "./config/url"
 import apiHandler from "./services/apiHandler"
 import Api from "./services/dataService"
 
@@ -15,26 +15,30 @@ class AppWrapper extends Component {
     this.state = {
       movies: [],
       genres: [],
+      search: [],
       language: "us",
       translations: {},
       isAuth: false,
       isLoading: false,
       pricing: [],
-    }
+    };
+    this.setState = this.setState.bind(this)
   }
-  componentDidMount(){
+  componentDidMount() {
     Api.getMovies('popular', 1)
-    .then(data =>
-       this.setState({
-      movies: [...data.results]
-    }));
-    
+      .then(data =>
+        this.setState({
+          movies: [...data.results]
+        }));
+
     Api.getGenres()
-    .then(data => 
-      this.setState({
-        genres: [...data.genres]
-      }))}
-  
+      .then(data =>
+        this.setState({
+          genres: [...data.genres]
+        }));
+        
+  }
+
   render() {
     console.log(this.state, 'state')
     return (
