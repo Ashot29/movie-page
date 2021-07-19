@@ -23,7 +23,6 @@ class SearchMovie extends PureComponent {
         return (
             <MovieContext.Consumer>
                 {value => {
-                      const { search } = value.state;
                     return (
                         <>
                             <form onSubmit={(event) => {
@@ -36,29 +35,16 @@ class SearchMovie extends PureComponent {
                                 })
                                
                             }}>
-                             {   console.log(search,"value state ")}
-                            <input onChange={this.searchMovieName} type="text" placeholder='Search Movie....' />
-                            <button>Search</button>
-                        </form>
+                                < input onChange={this.searchMovieName} type="text" placeholder='Search Movie....' />
+                                <button>Search</button>
+                            </form>
                         </>
-        )
-    }
-}
+                    )
+                }
+                }
             </MovieContext.Consumer >
         )
     }
 }
 
 export default SearchMovie
-
-
-
-
-
-
-
-
-
-
-
-

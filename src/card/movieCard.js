@@ -14,35 +14,38 @@ class MovieCard extends Component {
 
 
     render() {
-        const { search } = this.props;
+        const { data } = this.props;
         return (
-            <div className="card_container">
-                {
-                    search.map((element) => {
-                        console.log(element, 'element')
-                        return (
-                            <Card key={element.id} style={{ maxWidth: "345px" }}>
-                                <CardActionArea>
-                                    <CardMedia
-                                        style={{ height: "140px" }}
-                                        image={`${IMG_URL}${element.backdrop_path}`}
-                                        title= {element.title}
-                                        alt={element.title}
-                                    />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="h2">
-                                            {element.title}
-                                        </Typography>
-                                        <Typography variant="body2" color="textSecondary" component="p">
-                                          {element.overview}
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                        )
-                    })
-                }
-            </div>
+            <>
+                <div className="card_container">
+
+                    {
+                        data.map((element) => {
+                            return (
+                                <Card key={element.id} style={{ maxWidth: "345px" }}>
+                                    <CardActionArea>
+                                        <CardMedia
+                                            style={{ height: "140px" }}
+                                            image={`${IMG_URL}${element.backdrop_path}`}
+                                            title={element.title}
+                                            alt={element.title}
+                                        />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="h2">
+                                                {element.title}
+                                            </Typography>
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                {element.overview}
+                                            </Typography>
+                                            {element.release_date}
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
+                            )
+                        })
+                    }
+                </div>
+            </>
         )
     }
 }

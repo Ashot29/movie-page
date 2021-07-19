@@ -5,7 +5,7 @@ import apiHandler from "./apiHandler";
 // .then(resp => resp.json())
 // .then(data => console.log(data))
 
-// "https://image.tmdb.org/t/p/w500"
+// "https://image.tmdb.org/t/p/w500" 
 
 export default {
   getMovies: (category, page = 1) => {

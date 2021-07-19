@@ -5,9 +5,10 @@ function Navigation() {
     return (
         <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/genre">Genre</Link></li>
-            <li><Link to="/about">About</Link></li> 
-
+            <li><Link to="/popular">Popular</Link></li>
+            <li><Link to="/upComing">Up Coming</Link> </li>
+            <li><Link to="/nowPlaying">Now Playing</Link> </li>
+            <li><Link to="/topRated">Top Rated</Link> </li>
         </ul>
     )
 }

@@ -21,7 +21,7 @@ class Home extends Component {
                             <div className="home-page">
                                 <SearchMovie />
                                 {
-                                    search.length > 0 ? <MovieCard search={search}/> : <Table movies={movies} genres={genres}/>
+                                    search.length > 0 ? <MovieCard data={search}/> : <Table movies={movies} genres={genres}/>
                                 }
                             </div>
                         )
